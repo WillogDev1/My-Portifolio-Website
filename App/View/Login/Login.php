@@ -1,24 +1,68 @@
-<?php
-echo $DATA;
-?>
-
+<!-- app\views\home.php -->
 <!DOCTYPE html>
 <html lang="pt">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
+    <!-- Adicione a linha abaixo para referenciar o arquivo login.css -->
+    <link rel="stylesheet" href="Public/Css/Global.css">
+    <link rel="stylesheet" href="Public/Css/Login/Login.css">
 </head>
-
 <body>
-    <form action="/login" method="post">
-        <label for="email">First name:</label>
-        <input type="text" id="email" name="email"><br><br>
-        <label for="senha">Last name:</label>
-        <input type="text" id="senha" name="senha"><br><br>
-        <input type="submit" value="Submit">
-    </form>
+<div class="container" id="container">
+    <div class="form-container sign-up">
+      <form action="/login/cadastrar" method="post" >
+        <h1>Criar minha conta</h1>
+        <!-- 
+        <div class="social-icons">
+          <a href="#" class="icons"><i class="fa-brands fa-google-plus-g"></i></a>
+          <a href="#" class="icons"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="#" class="icons"><i class="fa-brands fa-github"></i></a>
+          <a href="#" class="icons"><i class="fa-brands fa-linkedin-in"></i></a>
+        </div>
+        <span>or use your email to registration</span>
+        -->
+        <input type="text" placeholder="Name" id="name" name="name">
+        <input type="email" placeholder="Email" id="createEmail" name="createEmail">
+        <input type="password" placeholder="Password" id="createPassword" name="createPassword">
+        <button>Criar</button>
+      </form>
+    </div>
+    <div class="form-container sign-in">
+      <form action="/login" method="post">
+        <h1>Acesse</h1>
+        <!-- 
+        <div class="social-icons">
+          <a href="#" class="icons"><i class="fa-brands fa-google-plus-g"></i></a>
+          <a href="#" class="icons"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="#" class="icons"><i class="fa-brands fa-github"></i></a>
+          <a href="#" class="icons"><i class="fa-brands fa-linkedin-in"></i></a>
+        </div>
+        <span>or use your email/password</span>
+        -->
+        <input type="email" placeholder="Email" id="username" name="username">
+        <input type="password" placeholder="Password" id="password" name="password">
+        <a href="#">Esqueceu a senha?</a>
+        <button>Login</button>
+      </form>
+    </div>
+    <div class="toggle-container">
+      <div class="toggle">
+        <div class="toggle-panel toggle-left">
+          <h1>Welcome Back!</h1>
+          <p>Enter your Personal details to use all of site features</p>
+          <button class="hidden" id="login">Acessar</button>
+        </div>
+        <div class="toggle-panel toggle-right">
+          <h1>Olá, Bem-Vindo!</h1>
+          <p>Caso não possua uma conta, se registre e confira</p>
+          <button class="hidden" id="register">Cadastrar</button>
+        </div>
+      </div>
+    </div>
+  </div>
 </body>
-
+<script type="text/javascript" src="Public/Js/Login/PanelMove.js"></script>
 </html>
+

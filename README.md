@@ -10,7 +10,7 @@
 
 # Índice
 
-- [Título e Imagem de capa](#X-Mvc-Framework-Simples-para-Projetos-Iniciais)
+- [Título e Imagem de capa](#My-Portifolio-Website)
 - [Descrição do Projeto](#Sobre-o-projeto)
 - [Status do Projeto](#status-do-Projeto)
 - [Funcionalidades e Demonstração da Aplicação](#Funcionalidades-do-projeto)
@@ -20,10 +20,7 @@
 
 # Sobre o projeto
 
-Criando uma "Framework" baseado em MVC para agilidade em projetos de pequeno porte e quem sabe médio porte, pensando em sites de hospedagem como Hostinger e Hostgator, que aceitam PHP. 
-Inúmeras vezes tentei iniciar meus estudos com os frameworks do momento, e inúmeras vezes falhei em entender não só o complexo, mas o básico. 
-Este projeto tem como objetivo principal o estudo e aprimoramento das minhas habilidades como desenvolvedor. Como objetivo secundário, pretendo criar projetos usando esta MVC, que chamo de X-MVC e dei um apelido para essa "Framework", para assim conseguir atender às necessidades que surgem conforme um projeto vai se desenvolvendo.
-Provavelmente existem padrões para algo ser considerado Framework por isso referencio sempre minha "Framework".
+Meu Website de portifolio para testar minha aplicação X-MVC
 
 # Status do Projeto
 
