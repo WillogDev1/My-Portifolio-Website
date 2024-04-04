@@ -1,4 +1,4 @@
-# My-Portifolio
+# My-Portifolio-Website
 
 <p align="center">
 <img src="https://img.shields.io/badge/version-1.0-blue"/>
