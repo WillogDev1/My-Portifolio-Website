@@ -23,11 +23,15 @@ function send_Fetch()
       })
       .then(response => response.json())
       .then(data => {
-        console.log("Sucesso:", data);
-        //window.location.reload();
+          if(data.success && data.redirect){
+            window.location.href = data.redirect;
+          }else{
+            alert(data.message);
+            console.error("Servidor: ", data.message);
+          }
       })
       .catch(error => {
-        console.error("Erro:", error);
+        console.error("Erro na requisição: ", error);
         //window.location.reload();
       });
 }

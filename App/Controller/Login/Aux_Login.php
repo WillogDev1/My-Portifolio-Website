@@ -8,23 +8,18 @@ class Aux_Login
     {
         if (!self::is_Vazio($username, $password))
         {
-            $_SESSION['Error'] = "Por favor, preencha todos os campos.";
             echo json_encode(["message" => "Por favor, preencha todos os campos."]);
             return false;
         } elseif (!self::is_Email($username))
         {
-            $_SESSION['Error'] = "Por favor, preencha um email valido.";
             echo json_encode(["message" => "Por favor, preencha um email valido."]);
             return false;
         } elseif (!self::is_Set($username, $password)){
-            $_SESSION['Error'] = "Por favor, preencha todos os campos.";
             echo json_encode(["message" => "Por favor, preencha todos os campos."]);
         } elseif(!self::is_White_Space($username, $password)){
-            $_SESSION['Error'] = "Por favor, não use Barra de Espaço.";
             echo json_encode(["message" => "Por favor, não use Barra de Espaço."]);
         }
         else{
-            //echo json_encode(["message" => "Input Validado"]);
             return ['username' => $username, 'password' => $password];
         }
     }

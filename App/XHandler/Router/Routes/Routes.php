@@ -43,6 +43,15 @@ class Routes
                     "Controller" => "Login@loggin",
                 ],
             ],
-        ];
+        
+            "/home" => [
+                "GET" => [
+                    "Controller" => "Home@get",
+                ],
+                "POST" => [
+                    "Controller" => "Home@post",
+                ],
+            ],
+    ];
     }
 }

@@ -1,4 +1,4 @@
-<?php 
+<?php
 namespace App\Controller\Login;
 
 use App\Model\Login\Login as LoginModel;
