@@ -10,21 +10,13 @@ class Login
 
     }
 
-    public function post()
+    public static function loggin()
     {
-        $email = $_POST['email'];
-        $senha = $_POST['senha'];
-        LoginModel::post($email, $senha);
-    }
-
-
-    public function verifiy_email($email)
-    {
-    // Verifica se o e-mail tem um formato válido usando uma expressão regular
-    $isValidEmail = filter_var($email, FILTER_VALIDATE_EMAIL);
-
-    // Retorna true se o e-mail for válido e false caso contrário
-    return $isValidEmail !== false;
+        $user_Input_Is_Valid = Aux_Login::validate_User_Input_For_Login($_POST['username'], $_POST['password']);
+        if($user_Input_Is_Valid)
+        {
+            LoginModel::loggin($user_Input_Is_Valid['username'], $user_Input_Is_Valid['password']);
+        }
     }
 }
 

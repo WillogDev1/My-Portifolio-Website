@@ -12,7 +12,7 @@
 <body>
 <div class="container" id="container">
     <div class="form-container sign-up">
-      <form action="/login/cadastrar" method="post" >
+      <form method="post" >
         <h1>Criar minha conta</h1>
         <!-- 
         <div class="social-icons">
@@ -30,7 +30,7 @@
       </form>
     </div>
     <div class="form-container sign-in">
-      <form action="/login" method="post">
+      <form method="post">
         <h1>Acesse</h1>
         <!-- 
         <div class="social-icons">
@@ -44,7 +44,7 @@
         <input type="email" placeholder="Email" id="username" name="username">
         <input type="password" placeholder="Password" id="password" name="password">
         <a href="#">Esqueceu a senha?</a>
-        <button>Login</button>
+        <button type="button" onclick="send_Fetch()">Login</button>
       </form>
     </div>
     <div class="toggle-container">
@@ -64,5 +64,6 @@
   </div>
 </body>
 <script type="text/javascript" src="Public/Js/Login/PanelMove.js"></script>
+<script type="text/javascript" src="Public/Js/Login/Fetch_Login.js"></script>
 </html>
 
