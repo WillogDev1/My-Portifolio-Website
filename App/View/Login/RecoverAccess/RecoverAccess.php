@@ -17,21 +17,21 @@
                     <small>Entre com os dados abaixo</small>
                 </h2>
             </div>
-            <form class="card-form">
+            <form class="card-form" method="post">
                 <div class="input">
-                    <input type="text" class="input-field" required />
+                    <input type="text" class="input-field" id="passwordRecover" name="passwordRecover" required />
                     <label class="input-label">Senha</label>
                 </div>
                 <div class="input">
-                    <input type="password" class="input-field" required />
+                    <input type="password" class="input-field" id="password" name="password" required />
                     <label class="input-label">Nova senha</label>
                 </div>
                 <div class="input">
-                    <input type="password" class="input-field" required />
+                    <input type="password" class="input-field" id="passwordConfirm" name="passwordConfirm" required />
                     <label class="input-label">Confirma Nova senha</label>
                 </div>
                 <div class="action">
-                    <button class="action-button">Atualizar</button>
+                    <button class="action-button" onclick=" send_Fetch_To_Recover_Access()">Atualizar</button>
                 </div>
             </form>
             <div class="card-info">
@@ -41,5 +41,5 @@
     </div>
 
 </body>
-
+<script type="text/javascript" src="/Public/Js/Login/RecoverAccess/RecoverAccess.js"></script>
 </html>

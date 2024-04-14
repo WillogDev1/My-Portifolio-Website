@@ -74,11 +74,11 @@ class Aux_Login
 
         $conn = Database::conectaDB();
 
-        $sql = 'SELECT * FROM TBL_PEOPLE WHERE COL_PEOPLE_ID = :prople_id limit 1';
+        $sql = 'SELECT * FROM TBL_PEOPLE WHERE COL_PEOPLE_ID = :people_id limit 1';
 
         try{
             $stmt = $conn->prepare($sql);
-            $stmt->bindParam(':prople_id', $people_id, \PDO::PARAM_INT);
+            $stmt->bindParam(':people_id', $people_id, \PDO::PARAM_INT);
             $stmt->execute();
             $result = $stmt->fetch(\PDO::FETCH_ASSOC);
             $_SESSION['nome']           = $result['COL_PEOPLE_NAME'         ];
