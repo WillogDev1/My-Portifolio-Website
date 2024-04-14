@@ -18,11 +18,11 @@ class Aux_Login
             self::retrive_People_Data($people_id);
 
             if ($is_First_Login) {
-                $response = ['success' => true, 'redirect' => '/primeiroacesso'];
+                $response = ['success' => true, 'redirect' => '/login/firstaccess'];
                 echo json_encode($response);
                 exit();
             } elseif ($is_Changing_Password) {
-                $response = ['success' => true, 'redirect' => '/recuperarsenha'];
+                $response = ['success' => true, 'redirect' => '/login/recoveraccess'];
                 echo json_encode($response);
                 exit();
             } else {

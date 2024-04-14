@@ -34,13 +34,41 @@ class Routes
                     "Controller" => "Login@get",
                 ],
             ],
-            
+
+            /* Inicio Rotas e Subrotas para Login */      
             "/login" => [
                 "GET" => [
                     "Controller" => "Login@get",
                 ],
                 "POST" => [
-                    "Controller" => "Login@post",
+                    "Controller" => "Login@loggin",
+                ],
+            ],
+
+            "/login/firstaccess" => [
+                "GET" => [
+                    "Controller" => "Login/FirstAccess@get",
+                ],
+                "POST" => [
+                    "Controller" => "Login/FirstAccess@post",
+                ],
+            ],
+
+            "/login/recoveraccess" => [
+                "GET" => [
+                    "Controller" => "Login/RecoverAccess@get",
+                ],
+                "POST" => [
+                    "Controller" => "Login/RecoverAccess@post",
+                ],
+            ],
+            /* Fim Rotas e Subrotas para Login */  
+            "/home" => [
+                "GET" => [
+                    "Controller" => "Home@get",
+                ],
+                "POST" => [
+                    "Controller" => "Home@post",
                 ],
             ],
     ];

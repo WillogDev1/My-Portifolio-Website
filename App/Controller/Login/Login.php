@@ -18,11 +18,6 @@ class Login
             LoginModel::loggin($user_Input_Is_Valid['username'], $user_Input_Is_Valid['password']);
         }
     }
-
-    public static function primeiroacesso()
-    {
-
-    }
 }
 
 ?>
