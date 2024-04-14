@@ -22,7 +22,7 @@ class Aux_Login
                 echo json_encode($response);
                 exit();
             } elseif ($is_Changing_Password) {
-                $response = ['success' => true, 'redirect' => '/home'];
+                $response = ['success' => true, 'redirect' => '/recuperarsenha'];
                 echo json_encode($response);
                 exit();
             } else {
@@ -78,7 +78,7 @@ class Aux_Login
 
         try{
             $stmt = $conn->prepare($sql);
-            $stmt->bindParam(':prople_id', $prople_id, \PDO::PARAM_INT);
+            $stmt->bindParam(':prople_id', $people_id, \PDO::PARAM_INT);
             $stmt->execute();
             $result = $stmt->fetch(\PDO::FETCH_ASSOC);
             $_SESSION['nome']           = $result['COL_PEOPLE_NAME'         ];

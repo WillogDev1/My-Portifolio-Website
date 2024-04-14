@@ -41,4 +41,10 @@ class Login
             die("Erro na consulta: " . $e->getMessage());
         }
     }
+
+    public static function primeiroAcesso()
+    {
+        
+    }
+
 }
