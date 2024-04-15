@@ -16,7 +16,7 @@ class AuxRecoverAccess
 
         if($_SESSION['TEMPORARY_PASSWORD'] === $passwordRecover)
         {
-            self::update_Password($passwordRecover, $passwordConfirm);
+            self::update_Password($passwordConfirm);
             $response = ['success' => true, 'message' => 'Senha atualiza com sucesso' ,'redirect' => '/home'];
             echo json_encode($response);
         }else{
@@ -47,5 +47,5 @@ class AuxRecoverAccess
     }
 
 
-    
+
 }
