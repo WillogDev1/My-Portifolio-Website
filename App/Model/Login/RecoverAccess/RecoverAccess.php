@@ -15,7 +15,6 @@ class RecoverAccess
     public static function post($passwordRecover, $password, $passwordConfirm)
     {
         $conn = Database::conectaDB();
-
         $sql = 'SELECT COL_USERS_TEMPORARY_PASSWORD FROM TBL_USERS WHERE COL_USERS_FK_PEOPLE_ID = :people_id limit 1';
         $people_id = $_SESSION['SESSION_ID'];
         try{
@@ -24,7 +23,7 @@ class RecoverAccess
             $stmt->execute();
             $result = $stmt->fetch(\PDO::FETCH_ASSOC);
             $_SESSION['TEMPORARY_PASSWORD'] = $result['COL_USERS_TEMPORARY_PASSWORD'];
-            AuxRecoverAccess::verify_Password_Is_Equal($passwordRecover);
+            AuxRecoverAccess::verify_Password_Is_Equal($passwordRecover, $passwordConfirm);
         }catch (\PDOException $e){
             error_log("Erro na consulta: " . $e->getMessage());
             return false;
