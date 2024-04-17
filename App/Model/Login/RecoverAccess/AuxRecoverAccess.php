@@ -19,9 +19,11 @@ class AuxRecoverAccess
             self::update_Password($passwordConfirm);
             $response = ['success' => true, 'message' => 'Senha atualiza com sucesso' ,'redirect' => '/home'];
             echo json_encode($response);
+            return true;
         }else{
             $response = ['message' => false, 'message' => 'Senha temporaria não confere'];
             echo json_encode($response);
+            return false;
         }
     }
 

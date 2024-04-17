@@ -4,6 +4,9 @@ namespace Testes\Unit\Login\RecoverAccess;
 
 use App\Controller\RecoverAccess\RecoverAccess as RecoverAccessController;
 use App\Controller\Login\RecoverAccess\AuxRecoverAccess;
+use App\Model\Login\RecoverAccess\AuxRecoverAccess as RecoverAccessModel;
+use App\Model\Login\RecoverAccess\AuxRecoverAccess as RecoverAccessAuxRecoverAccess;
+use App\Model\Login\RecoverAccess\RecoverAccess;
 use PHPUnit\Framework\TestCase;
 
 class testRecoverAccess extends TestCase
@@ -53,6 +56,20 @@ class testRecoverAccess extends TestCase
         $this->assertFalse(
             AuxRecoverAccess::validate_User_Input_For_Login('admin', 'not','equal')
         );
+    }
+
+    public function testverify_Password_Is_Equal()
+    {
+        session_start();
+        $passwordRecover = 'temporary123';
+        $passwordNew = 'newpassword123';
+        $passwordConfirm = 'newpassword123';
+        $_SESSION['SESSION_ID'] = 1;
+        $_SESSION['TEMPORARY_PASSWORD'] = 'temporary123';
+
+        $this->assertTrue(RecoverAccessAuxRecoverAccess::verify_Password_Is_Equal($passwordRecover, $passwordNew));
+
+
     }
 } 
 
