@@ -43,7 +43,7 @@
         -->
         <input type="email" placeholder="Email" id="username" name="username">
         <input type="password" placeholder="Password" id="password" name="password">
-        <a href="#">Esqueceu a senha?</a>
+        <a href="/login/recoveraccess/senderrecoveremail">Esqueceu a senha?</a>
         <button type="button" onclick="send_Fetch()">Login</button>
       </form>
     </div>

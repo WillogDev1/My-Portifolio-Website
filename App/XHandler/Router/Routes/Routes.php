@@ -9,7 +9,8 @@ class Routes
     {
         return [
             "/" => "",
-            "/login" => "login"
+            "/login" => "login",
+            "/login/recoveraccess/senderrecoveremail" => "login"
         ];
     }
 
@@ -60,6 +61,15 @@ class Routes
                 ],
                 "POST" => [
                     "Controller" => "Login/RecoverAccess@post",
+                ],
+            ],
+
+            "/login/recoveraccess/senderrecoveremail" => [
+                "GET" => [
+                    "Controller" => "Login/RecoverAccess/SenderRecoverEmail@get",
+                ],
+                "POST" => [
+                    "Controller" => "Login/RecoverAccess/SenderRecoverEmail@post",
                 ],
             ],
             /* Fim Rotas e Subrotas para Login */  
