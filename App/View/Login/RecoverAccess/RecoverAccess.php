@@ -31,7 +31,7 @@
                     <label class="input-label">Confirma Nova senha</label>
                 </div>
                 <div class="action">
-                    <button class="action-button" onclick=" send_Fetch_To_Recover_Access()">Atualizar</button>
+                    <button class="action-button" type="button" onclick="send_Fetch_To_Recover_Access()">Atualizar</button>
                 </div>
             </form>
             <div class="card-info">

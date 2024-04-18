@@ -112,16 +112,16 @@
                 </div>
                 <div class="modal-body">
                     <div style="text-align: center;">
-                        <form id="demo-form" action="/login/recoveraccess/senderrecoveremail" method="post">
+                        <form id="demo-form" method="post">
                             <div style="text-align: center;">
                                 <label>Digite seu email cadastrado</label><br>
-                                <input type="email" name="email" required><br><br>
+                                <input type="email" id="email_Recover" name="email_Recover" required><br><br>
                                 <!-- Campo oculto para o token do reCAPTCHA -->
                                 <input type="hidden" id="g-recaptcha-response" name="g-recaptcha-response">
                                 <!-- Espaço reservado para o reCAPTCHA -->
                                 <div style="padding-left: 20%; padding-bottom: 20%; " class="g-recaptcha" data-sitekey="6LfJvr4pAAAAAKVu4uYF67RhEPa-Y1P_ImUWC5gs" data-size="normal"></div>
                                 <!-- Botão de envio do formulário -->
-                                <button type="submit" class="btn btn-primary">Enviar</button>
+                                <button class="btn btn-primary" type="button" onclick="send_Fetch_Sender_Email()">Enviar</button>
                             </div>
                         </form>
                     </div>
@@ -138,5 +138,5 @@
         document.getElementById("demo-form").submit();
     }
 </script>
-
+<script type="text/javascript" src="/Public/Js/Login/RecoverAccess/SenderRecover/SenderRecover.js"></script>
 </html>
