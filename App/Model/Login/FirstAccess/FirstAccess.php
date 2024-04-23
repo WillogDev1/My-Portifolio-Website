@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Model\Login\FirstAccess;
-
+use App\Model\Login\FirstAccess\AuxFirstAccess;
 class FirstAccess
 {
     public static function get()
@@ -11,9 +11,10 @@ class FirstAccess
         return $DATA;
     }
 
-    public static function post()
+    public static function post($passwordConfirm)
     {
         // Implementação da função POST
+        AuxFirstAccess::update_User_Password($passwordConfirm);
     }
 }
 

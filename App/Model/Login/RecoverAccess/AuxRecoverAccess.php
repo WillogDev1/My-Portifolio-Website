@@ -14,14 +14,14 @@ class AuxRecoverAccess
     {
         self::start_Session();
 
-        if($_SESSION['TEMPORARY_PASSWORD'] === $passwordRecover)
+        if($passwordRecover === $_SESSION['TEMPORARY_PASSWORD'])
         {
             self::update_Password($passwordConfirm);
             $response = ['success' => true, 'message' => 'Senha atualiza com sucesso' ,'redirect' => '/home'];
             echo json_encode($response);
             return true;
         }else{
-            $response = ['message' => false, 'message' => 'Senha temporaria não confere'];
+            $response = ['message' => false, 'message' => 'Senha temporaria não confere | ' . $_SESSION['TEMPORARY_PASSWORD'] . " | " . "$passwordRecover"];
             echo json_encode($response);
             return false;
         }

@@ -16,17 +16,17 @@
                     <small>Troque sua senha</small>
                 </h2>
             </div>
-            <form class="card-form">
+            <form class="card-form" method="POST">
                 <div class="input">
                     <input type="password" class="input-field" id="password" name="password" required />
                     <label class="input-label">Senha</label>
                 </div>
                 <div class="input">
-                    <input type="password" class="input-field" id="passwordConfirm" name="passwordConfirm" required />
+                    <input type="passwordConfirm" class="input-field" id="passwordConfirm" name="passwordConfirm" required />
                     <label class="input-label">Confirme a senha</label>
                 </div>
                 <div class="action">
-                    <button class="action-button">Atualizar</button>
+                    <button class="action-button" type="button" onclick="send_Fetch_First_Access()">Atualizar</button>
                 </div>
             </form>
             <div class="card-info">
@@ -37,5 +37,5 @@
     </div>
 
 </body>
-
+<script type="text/javascript" src="/Public/Js/Login/FirstAccess/First_Access.js"></script>
 </html>
