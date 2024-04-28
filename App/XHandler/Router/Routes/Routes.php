@@ -14,8 +14,20 @@ class Routes
         ];
     }
 
+    public static function ROUTES_THAT_DONT_NEED_PERMISSION()
+    {
+        return [
+            "/" => "",
+            "/login" => "login",
+            "/perfil" => "perfil",
+            "/perfil/atualiza-senha" => "perfil",
+            "/login/recoveraccess" => "login",
+            "/login/firstaccess" => "login"
+        ];
+    }
 
-    public static function ROUTES() // Adicionar um @ a mais se possivel, ou um "Permissao_ID" => "1"
+
+    public static function ROUTES()
     {
         return [
             "/page-not-found" => [
@@ -75,10 +87,34 @@ class Routes
             /* Fim Rotas e Subrotas para Login */  
             "/home" => [
                 "GET" => [
-                    "Controller" => "Home@get",
+                    "Controller" => "Home@pode_Visualizar_Home",
                 ],
                 "POST" => [
                     "Controller" => "Home@post",
+                ],
+            ],
+    
+            "/perfil" => [
+                "GET" => [
+                    "Controller" => "Perfil@pode_Visualizar_Perfil",
+                ],
+                "POST" => [
+                    "Controller" => "Perfil@post",
+                ],
+            ],
+
+            "/perfil/atualiza-senha" => [
+                "POST" => [
+                    "Controller" => "Perfil@pode_Atualizar_Senha",
+                ],
+            ],
+    
+            "/administrativo" => [
+                "GET" => [
+                    "Controller" => "Administrativo@pode_Visualizar_Administrativo",
+                ],
+                "POST" => [
+                    "Controller" => "Administrativo@post",
                 ],
             ],
     ];

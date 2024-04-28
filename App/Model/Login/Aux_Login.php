@@ -16,7 +16,7 @@ class Aux_Login
             self::retrive_Session($user_id);
             self::retrive_Users_Data($username);
             self::retrive_People_Data($people_id);
-
+            self::retrieveUserPermissions($people_id);
             if ($is_First_Login) {
                 $response = ['success' => true, 'redirect' => '/login/firstaccess'];
                 echo json_encode($response);
@@ -90,6 +90,40 @@ class Aux_Login
             $_SESSION['casaNumero']     = $result['COL_PEOPLE_HOUSE_NUMBER' ];
             $_SESSION['imgPerfil']      = $result['COL_PEOPLE_IMG'          ];
         }catch (\PDOException $e){
+            error_log("Erro na consulta: " . $e->getMessage());
+            return false;
+        }
+        return true;
+    }
+
+    public static function retrieveUserPermissions($people_id)
+    {
+        $conn = Database::conectaDB();
+    
+        $permissions = array(); // Array para armazenar as permissões do usuário
+    
+        // Consulta para recuperar as permissões do usuário com base no ID do usuário
+        $sql = 'SELECT TBL_PERMISSIONS.COL_PERMISSIONS_ACTION
+                FROM TBL_PERMISSIONS
+                INNER JOIN TBL_USERS_HAS_PERMISSIONS 
+                ON TBL_PERMISSIONS.COL_PERMISSIONS_ID = TBL_USERS_HAS_PERMISSIONS.COL_USERS_HAS_PERMISSIONS_FK_PERMISSIONS_ID
+                WHERE TBL_USERS_HAS_PERMISSIONS.COL_USERS_HAS_PERMISSIONS_FK_USERS_ID = :people_id';
+    
+        try {
+            $stmt = $conn->prepare($sql);
+            $stmt->bindParam(':people_id', $people_id, \PDO::PARAM_INT);
+            $stmt->execute();
+            $result = $stmt->fetchAll(\PDO::FETCH_ASSOC);
+    
+            // Percorre o resultado e armazena as permissões no array
+            foreach ($result as $row) {
+                $permissions[] = $row['COL_PERMISSIONS_ACTION'];
+            }
+    
+            // Armazena as permissões na sessão do usuário
+            $_SESSION['user_permissions'] = $permissions;
+    
+        } catch (\PDOException $e) {
             error_log("Erro na consulta: " . $e->getMessage());
             return false;
         }

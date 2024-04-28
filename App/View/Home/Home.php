@@ -1,14 +1,17 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <title>Home</title>
 </head>
+
 <body>
-
-   <h1><?php echo $DATA; ?></h1> <!-- Seu código HTML aqui -->
-   <form action="/login/recoveraccess/sendemail" method="post">
-
-    <button>SendEmail</button>
-   </form>
+    <div><?php require __DIR__ . '/../Componentes/Navbar.php' ?></div>
+    <!--Container Main start-->
+    <div class="height-100 bg-light">
+        <h4>Main Components</h4>
+    </div>
+    <!--Container Main end-->
 </body>
+
 </html>
