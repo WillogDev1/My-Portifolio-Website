@@ -10,7 +10,7 @@
       <div class="header_toggle"> <i class='bx bx-menu' id="header-toggle"></i> </div>
       <p><?php echo $_SESSION['username'] ?></p>
       <div class="header_img">
-         <img src="<?php echo $_SESSION['dados_usuario']['img_Pessoa'] . '?timestamp=' . time(); ?>" alt="">
+         <img src="<?php //echo $_SESSION['dados_usuario']['img_Pessoa'] . '?timestamp=' . time(); ?>" alt="">
       </div>
    </header>
    <div class="l-navbar" id="nav-bar">
