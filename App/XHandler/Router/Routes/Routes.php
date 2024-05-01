@@ -20,6 +20,7 @@ class Routes
             "/" => "",
             "/login" => "login",
             "/perfil" => "perfil",
+            "/home" => "home",
             "/perfil/atualiza-senha" => "perfil",
             "/login/recoveraccess" => "login",
             "/login/firstaccess" => "login"
@@ -48,7 +49,7 @@ class Routes
                 ],
             ],
 
-            /* Inicio Rotas e Subrotas para Login */      
+            /* Inicio Rotas e Subrotas para Login */
             "/login" => [
                 "GET" => [
                     "Controller" => "Login@get",
@@ -84,7 +85,7 @@ class Routes
                     "Controller" => "Login/RecoverAccess/SenderRecoverEmail@post",
                 ],
             ],
-            /* Fim Rotas e Subrotas para Login */  
+            /* Fim Rotas e Subrotas para Login */
             "/home" => [
                 "GET" => [
                     "Controller" => "Home@pode_Visualizar_Home",
@@ -93,7 +94,7 @@ class Routes
                     "Controller" => "Home@post",
                 ],
             ],
-    
+
             "/perfil" => [
                 "GET" => [
                     "Controller" => "Perfil@pode_Visualizar_Perfil",
@@ -108,7 +109,7 @@ class Routes
                     "Controller" => "Perfil@pode_Atualizar_Senha",
                 ],
             ],
-    
+
             "/administrativo" => [
                 "GET" => [
                     "Controller" => "Administrativo@pode_Visualizar_Administrativo",
@@ -117,6 +118,65 @@ class Routes
                     "Controller" => "Administrativo@post",
                 ],
             ],
-    ];
+            /* Inicio das rotas de Usuario */
+            "/administrativo/usuarios" => [
+                "GET" => [
+                    "Controller" => "Administrativo/Usuarios@pode_Visualizar_Usuarios",
+                ],
+                "POST" => [
+                    "Controller" => "Administrativo/Usuarios@post",
+                ],
+            ],
+
+            "/administrativo/usuarios/inserirusuario" => [
+                "GET" => [
+                    "Controller" => "Administrativo/Usuarios/InserirUsuario@pode_Visualizar_Insercao_De_Usuario",
+                ],
+                "POST" => [
+                    "Controller" => "Administrativo/Usuarios/InserirUsuario@pode_Inserir_Usuario",
+                ],
+            ],
+
+            "/administrativo/usuarios/editarusuario" => [
+                "GET" => [
+                    "Controller" => "Administrativo/Usuarios/EditarUsuario@pode_Visualizar_Edicao_De_Usuario",
+                ],
+                "POST" => [
+                    "Controller" => "Administrativo/Usuarios/EditarUsuario@pode_Editar_Usuario",
+                ],
+            ],
+
+            "/administrativo/usuarios/editarusuario/enviarsenha" => [
+                "POST" => [
+                    "Controller" => "Administrativo/Usuarios/EditarUsuario@pode_Enviar_Senha_Do_Usuario",
+                ],
+            ],
+
+            "/administrativo/usuarios/editarusuario/alterarsenha" => [
+                "POST" => [
+                    "Controller" => "Administrativo/Usuarios/EditarUsuario@pode_Alterar_Senha_Do_Usuario",
+                ],
+            ],
+
+            "/administrativo/usuarios/editarusuario/desativar" => [
+                "POST" => [
+                    "Controller" => "Administrativo/Usuarios/EditarUsuario@pode_Desativar_Usuario",
+                ],
+            ],
+
+
+            "/administrativo/usuarios/editarusuario/ativar" => [
+                "POST" => [
+                    "Controller" => "Administrativo/Usuarios/EditarUsuario@pode_Ativar_Usuario",
+                ],
+            ],
+
+            "/administrativo/usuarios/editarusuario/updatepermissao" => [
+                "POST" => [
+                    "Controller" => "Administrativo/Usuarios/EditarUsuario@pode_Atualizar_Permissao_Usuario",
+                ],
+            ],
+            /* Fim das rotas de Usuario */
+        ];
     }
 }

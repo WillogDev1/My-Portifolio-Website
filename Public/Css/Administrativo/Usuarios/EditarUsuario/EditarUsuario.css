@@ -1,0 +1,66 @@
+/* Estilo base do toggle switch */
+.toggle-switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+  }
+  
+  /* Estilo da checkbox (escondida) */
+  .toggle-switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  
+  /* Estilo do controle deslizante (barra) */
+  .toggle-slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+    border-radius: 34px;
+  }
+  
+  /* Estilo da bolinha (knob) */
+  .toggle-slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+    border-radius: 50%;
+  }
+  
+  /* Quando a checkbox está marcada, mude o fundo do controle deslizante */
+  .toggle-switch input:checked + .toggle-slider {
+    background-color: #2196F3;
+  }
+  
+  /* Move a bolinha para a posição certa quando o toggle é ativado */
+  .toggle-switch input:checked + .toggle-slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+  }
+  
+
+  .table-divider td {
+    padding: 0;
+    border-top: 2px solid #ccc; /* Cor e espessura da linha */
+}
+
+.rowspan {
+  text-align: center;
+    background-color: #ccc; /* Cor de fundo */
+    border-bottom: 2px solid black; /* Linha no fundo */
+}

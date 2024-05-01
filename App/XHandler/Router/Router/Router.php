@@ -100,7 +100,7 @@ class Router
                         Render::RENDER($CONTROLLER_NAME, $CONTROLLER_NAME, $CONTROLLER_NAME, $CONTROLLER_ACTION, $METHOD);
                     } else {
                         //var_dump( $_SESSION['user_permissions']);
-                        echo "Sem Permissão";
+                        echo json_encode(["message" => "Sem Permissão"]);
                     }
                 }
             } else {

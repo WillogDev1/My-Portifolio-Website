@@ -1,0 +1,30 @@
+.grid-container {
+    display: grid;
+    align-content: center;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 10px;
+    padding: 30px;
+  }
+  
+  .grid-container > div{
+    cursor: pointer;
+    max-width: 400px;
+    background-color: #fff;
+    text-align: center;
+    border: 1px solid #ddd;
+    margin-bottom: 20px;
+    border-radius: 4px;
+    padding: 90px 0;
+    font-size: 20px;
+  }
+  .grid-container > div i{
+    border: 1px solid #ddd;
+    width: 200px;
+    height: 100px;
+    border-radius: 100px;
+    background-color: #ddd;
+  }
+  .grid-container > div:hover
+  {
+    border: 1px solid #000000;
+  }
